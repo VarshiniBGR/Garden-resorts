@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Garden Resorts</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script type="text/javascript">
+		function validateForm() {
+			var name = document.getElementById("name").value;
+			var telephone = document.getElementById("telephone").value;
+			var subject = document.getElementById("subject").value;
+			var message = document.getElementById("message").value;
+
+			if (name == "" || telephone == "" || subject == "" || message == "") {
+				alert("All fields are required.");
+				return false;
+			}
+			// Additional validation for telephone (basic number check)
+			var phonePattern = /^[0-9]{10}$/;
+			if (!phonePattern.test(telephone)) {
+				alert("Please enter a valid 10-digit phone number.");
+				return false;
+			}
+
+			// If validation is successful
+			alert("Your message has been sent!");
+			return true;
+		}
+
+		function clearForm() {
+			document.getElementById("contactForm").reset();
+		}
+	</script>
+</head>
+<body>
+	<div id="page">
+		<div id="header">
+			<a href="index.html" id="logo"><img src="images/logo.png" alt="Logo"></a>
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="about.html">About</a></li>
+				<li><a href="munnar.html">Munnar</a></li>
+				<li><a href="gallery.html">Gallery</a></li>
+				<li><a href="menu.html">Menu</a>
+				</li>
+				<li class="current"><a href="contact.html">Contact</a></li>
+			</ul>
+		</div>
+
+		<div id="body">
+			<div id="content">
+				<h1>Contact Us</h1>
+				<form id="contactForm" action="index.html" onsubmit="return validateForm()">
+					<p>
+						We are located in the beautiful hills of Munnar, Tamil Nadu. Our resort is nestled in nature, offering a tranquil escape from the hustle and bustle of city life.
+					</p>
+					<label for="name"><span>Name:</span>
+						<input type="text" id="name">
+					</label>
+					<label for="address"><span>Address:</span>
+						<input type="text" id="address" >
+					</label>
+					<label for="telephone"><span>Telephone Number:</span>
+						<input type="text" id="telephone">
+					</label>
+					<label for="subject"><span>Subject:</span>
+						<input type="text" id="subject">
+					</label>
+					<label for="message"><span>Message:</span>
+						<textarea name="message" id="message" cols="30" rows="10"></textarea>
+					</label>
+					<input type="submit" id="send" value="Send">
+					<input type="button" value="Clear" onclick="clearForm()">
+				</form>
+			</div>
+		</div>
+
+		<div id="footer">
+			<div>
+				<div>
+					<h1>Experience the art of relaxation at GARDEN RESORTS..</h1>
+				</div>
+				<div>
+					<h1>CONTACT DETAILS</h1>
+					<ul>
+						<li>Phone: +91 XXXXXXXXXX</li><br>
+						<li>Email: info@gardenresorts.com</li><br>
+						<li>Address: Munnar, Tamil Nadu</li><br>
+					</ul>
+				</div>
+				<div>
+					<h1>STAY UPDATED</h1>
+					<form action="subscribe.php" method="post">
+						<input type="email" name="email" placeholder="Enter your email address" required><br><br>
+						<center><button type="submit" style="color: green;">Subscribe</button></center>
+					</form>
+				</div>
+				<div>
+					<h1>Connect</h1>
+					<a href="mailto:info@example.com" id="mail">Email us</a>
+					<a href="https://www.facebook.com" target="_blank" id="facebook">Facebook</a>
+					<a href="https://www.twitter.com" target="_blank" id="twitter">Twitter</a>
+					<a href="https://www.google.com" target="_blank" id="googleplus">Google&#43;</a>
+				</div>
+			</div>
+			<p>Garden Resorts &copy; 2023 | All Rights Reserved</p>
+		</div>
+		</div>
+		</body>
+		</html>
+		
